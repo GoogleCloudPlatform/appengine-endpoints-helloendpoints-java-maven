@@ -1,12 +1,12 @@
 package com.google.devrel.samples.helloendpoints;
 
-public class Greeting {
+public class HelloGreeting {
 
   public String message;
 
-  public Greeting() {};
+  public HelloGreeting() {};
 
-  public Greeting(String message) {
+  public HelloGreeting(String message) {
     this.message = message;
   }
 

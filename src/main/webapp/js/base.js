@@ -33,12 +33,6 @@ google.devrel.samples.hello.SCOPES =
     'https://www.googleapis.com/auth/userinfo.email';
 
 /**
- * Response type of the auth token.
- * @type {string}
- */
-google.devrel.samples.hello.RESPONSE_TYPE = 'token id_token';
-
-/**
  * Whether or not the user is signed in.
  * @type {boolean}
  */
@@ -50,9 +44,6 @@ google.devrel.samples.hello.signedIn = false;
 google.devrel.samples.hello.userAuthed = function() {
   var request = gapi.client.oauth2.userinfo.get().execute(function(resp) {
     if (!resp.code) {
-      var token = gapi.auth.getToken();
-      token.access_token = token.id_token;
-      gapi.auth.setToken(token);
       google.devrel.samples.hello.signedIn = true;
       document.getElementById('signinButton').innerHTML = 'Sign out';
       document.getElementById('authedGreeting').disabled = false;
@@ -67,8 +58,7 @@ google.devrel.samples.hello.userAuthed = function() {
  */
 google.devrel.samples.hello.signin = function(mode, callback) {
   gapi.auth.authorize({client_id: google.devrel.samples.hello.CLIENT_ID,
-      scope: google.devrel.samples.hello.SCOPES, immediate: mode,
-      response_type: google.devrel.samples.hello.RESPONSE_TYPE},
+      scope: google.devrel.samples.hello.SCOPES, immediate: mode},
       callback);
 };
 
