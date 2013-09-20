@@ -14,8 +14,9 @@ import javax.inject.Named;
 @Api(
     name = "helloworld",
     version = "v1",
-    clientIds = {Ids.WEB_CLIENT_ID, Ids.ANDROID_CLIENT_ID, Ids.IOS_CLIENT_ID},
-    audiences = {Ids.ANDROID_AUDIENCE}
+    scopes = {Constants.EMAIL_SCOPE},
+    clientIds = {Constants.WEB_CLIENT_ID, Constants.ANDROID_CLIENT_ID, Constants.IOS_CLIENT_ID},
+    audiences = {Constants.ANDROID_AUDIENCE}
 )
 public class Greetings {
 
