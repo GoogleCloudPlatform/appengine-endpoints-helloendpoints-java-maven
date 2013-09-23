@@ -14,29 +14,30 @@ import javax.inject.Named;
 @Api(
     name = "helloworld",
     version = "v1",
-    clientIds = {Ids.WEB_CLIENT_ID, Ids.ANDROID_CLIENT_ID, Ids.IOS_CLIENT_ID},
-    audiences = {Ids.ANDROID_AUDIENCE}
+    scopes = {Constants.EMAIL_SCOPE},
+    clientIds = {Constants.WEB_CLIENT_ID, Constants.ANDROID_CLIENT_ID, Constants.IOS_CLIENT_ID},
+    audiences = {Constants.ANDROID_AUDIENCE}
 )
 public class Greetings {
 
-  public static ArrayList<Greeting> greetings = new ArrayList<Greeting>();
+  public static ArrayList<HelloGreeting> greetings = new ArrayList<HelloGreeting>();
 
   static {
-    greetings.add(new Greeting("hello world!"));
-    greetings.add(new Greeting("goodbye world!"));
+    greetings.add(new HelloGreeting("hello world!"));
+    greetings.add(new HelloGreeting("goodbye world!"));
   }
 
-  public Greeting getGreeting(@Named("id") Integer id) {
+  public HelloGreeting getGreeting(@Named("id") Integer id) {
     return greetings.get(id);
   }
 
-  public ArrayList<Greeting> listGreeting() {
+  public ArrayList<HelloGreeting> listGreeting() {
     return greetings;
   }
 
   @ApiMethod(name = "greetings.multiply", httpMethod = "post")
-  public Greeting insertGreeting(@Named("times") Integer times, Greeting greeting) {
-    Greeting response = new Greeting();
+  public HelloGreeting insertGreeting(@Named("times") Integer times, HelloGreeting greeting) {
+    HelloGreeting response = new HelloGreeting();
     StringBuilder responseBuilder = new StringBuilder();
     for (int i = 0; i < times; i++) {
       responseBuilder.append(greeting.getMessage());
@@ -45,9 +46,9 @@ public class Greetings {
     return response;
   }
 
-  @ApiMethod(name = "greetings.authed", path = "greeting/authed")
-  public Greeting authedGreeting(User user) {
-    Greeting response = new Greeting("hello " + user.getEmail());
+  @ApiMethod(name = "greetings.authed", path = "hellogreeting/authed")
+  public HelloGreeting authedGreeting(User user) {
+    HelloGreeting response = new HelloGreeting("hello " + user.getEmail());
     return response;
   }
 }
