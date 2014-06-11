@@ -1,5 +1,4 @@
 //[START imports]
-
 package com.example.helloendpoints;
 
 import com.google.api.server.spi.config.Api;
