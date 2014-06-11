@@ -1,4 +1,5 @@
-//[START import_statements]
+
+ //[START begin]
 package com.example.helloendpoints;
 
 import com.google.api.server.spi.config.Api;
@@ -9,7 +10,7 @@ import com.google.appengine.api.users.User;
 import java.util.ArrayList;
 
 import javax.inject.Named;
-//[END import_statements]
+//[END begin]
  //[START api_def]
 
 /**
