@@ -19,11 +19,11 @@ A "hello world" application for Google Cloud Endpoints in Java.
    your instance of this sample.
 1. Optional step: These sub steps are not required but will enable the "Authenticated
 Greeting" functionality.
-    1. Update the values in `src/com/google/devrel/samples/helloendpoints/Ids.java` to
-reflect the respective client IDs you have registered in the [APIs Console][6].
+   1. Update the values in [src/main/java/com/example/helloendpoints/Constants.java](src/main/java/com/example/helloendpoints/Constants.java) to reflect the web client ID you have registered in the
+[Credentials on Developers Console for OAuth 2.0 client IDs][6].
     1. Update the value of `google.devrel.samples.helloendpoints.CLIENT_ID` in
-`src/main/webapp/base.js` to reflect the web client ID you have registered in the
-[APIs Console][4].
+[src/main/webapp/js/base.js](src/main/webapp/js/base.js) to reflect the web client ID you have registered in the
+[Credentials on Developers Console for OAuth 2.0 client IDs][6].
 1. `mvn clean install`
 1. Run the application with `mvn appengine:devserver`, and ensure it's running
    by visiting your local server's address (by default [localhost:8080][5].)
@@ -36,4 +36,4 @@ reflect the respective client IDs you have registered in the [APIs Console][6].
 [3]: https://developers.google.com/appengine/docs/java/endpoints/
 [4]: https://developers.google.com/appengine/docs/java/tools/maven
 [5]: https://localhost:8080/
-[6]: https://developers.google.com/console
+[6]: https://console.developers.google.com/project/_/apiui/credential
