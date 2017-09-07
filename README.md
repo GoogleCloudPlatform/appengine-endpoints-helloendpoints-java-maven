@@ -1,3 +1,10 @@
+# Project status #
+![status: inactive](https://img.shields.io/badge/status-inactive-red.svg)
+
+This project is no longer actively maintained, and remains here as an archive of this work.
+
+For a replacement, check out this actively maintained [sample](https://github.com/GoogleCloudPlatform/java-docs-samples/tree/master/appengine-java8/endpoints-v2-backend).
+
 appengine-endpoints-helloendpoints-java-maven
 =============================================
 
